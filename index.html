@@ -1,2 +1,384 @@
-Halo perkenalkan...
-Saya Sir Sony dari SMAK HOLIS
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenalan · Sony Kristanto</title>
+  <!-- Font & ikon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+      padding: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* kartu utama — elegan, bersih, dengan sentuhan hangat */
+    .card {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 3rem 3rem 3rem 3rem;
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 20, 30, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7);
+      padding: 2.8rem 2.8rem 3rem;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px -15px rgba(0, 40, 60, 0.3);
+    }
+
+    /* header dengan ikon & nama */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .avatar-icon {
+      font-size: 3.6rem;
+      color: #1e3c4f;
+      background: rgba(30, 60, 79, 0.08);
+      width: 5.5rem;
+      height: 5.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2rem;
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .name-title h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b2a38;
+      line-height: 1.1;
+    }
+
+    .name-title .badge {
+      display: inline-block;
+      background: rgba(12, 52, 70, 0.08);
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1f4a5e;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-top: 0.25rem;
+    }
+
+    /* profesi dengan aksen */
+    .profesi-block {
+      background: linear-gradient(135deg, #0b2a38 0%, #1f4a5e 100%);
+      padding: 0.9rem 1.8rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1.2rem 0 1.6rem 0;
+      box-shadow: 0 8px 18px -8px rgba(10, 40, 55, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .profesi-block i {
+      color: #b6d7e8;
+      font-size: 1.5rem;
+    }
+
+    .profesi-block span {
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .profesi-block .sub {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #cde1ec;
+      margin-left: 0.3rem;
+    }
+
+    /* deskripsi / bio singkat */
+    .bio {
+      margin: 1.8rem 0 2rem 0;
+      padding: 0.2rem 0;
+    }
+
+    .bio p {
+      font-size: 1.12rem;
+      color: #1e3847;
+      font-weight: 400;
+      max-width: 90%;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      display: inline-block;
+    }
+
+    .bio p i {
+      color: #256f8f;
+      margin-right: 0.5rem;
+    }
+
+    /* grid keahlian / minat — sentuhan fisika */
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.9rem;
+      margin: 2.2rem 0 2rem 0;
+    }
+
+    .interest-item {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 500;
+      color: #0b2a38;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: 0.15s;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .interest-item i {
+      color: #1f5e7a;
+      font-size: 1.1rem;
+      width: 1.4rem;
+      text-align: center;
+    }
+
+    .interest-item:hover {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: #aac7db;
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px -8px rgba(0, 40, 60, 0.2);
+    }
+
+    /* kutipan / motto */
+    .quote {
+      margin: 2rem 0 2.2rem 0;
+      padding: 1.2rem 1.8rem;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      border-left: 6px solid #1f5e7a;
+      font-style: italic;
+      color: #1b3748;
+      font-weight: 400;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-left: 6px solid #1f5e7a;
+    }
+
+    .quote i {
+      color: #1f5e7a;
+      margin-right: 0.6rem;
+    }
+
+    /* tombol sosial media / kontak */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 1.2rem;
+      align-items: center;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #1b3c4e;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1.4rem 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .social-links a i {
+      font-size: 1.2rem;
+      color: #1f5e7a;
+    }
+
+    .social-links a:hover {
+      background: white;
+      border-color: #9bbfd3;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -12px rgba(0, 40, 60, 0.25);
+      color: #0b2a38;
+    }
+
+    .social-links .btn-email {
+      background: #0b2a38;
+      border-color: #0b2a38;
+      color: white;
+    }
+
+    .social-links .btn-email i {
+      color: #b6d7e8;
+    }
+
+    .social-links .btn-email:hover {
+      background: #1a4357;
+      border-color: #1a4357;
+      color: white;
+    }
+
+    /* footer kecil */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #3a6073;
+      opacity: 0.7;
+      letter-spacing: 0.3px;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      padding-top: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-note i {
+      margin-right: 0.3rem;
+    }
+
+    /* responsive */
+    @media (max-width: 580px) {
+      .card {
+        padding: 2rem 1.5rem;
+        border-radius: 2.5rem;
+      }
+      .name-title h1 {
+        font-size: 2.2rem;
+      }
+      .profesi-block {
+        padding: 0.6rem 1.2rem;
+      }
+      .profesi-block span {
+        font-size: 1.2rem;
+      }
+      .bio p {
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      .interest-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      }
+      .social-links a {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+      }
+      .avatar-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- header nama + avatar -->
+    <div class="profile-header">
+      <div class="avatar-icon">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <div class="name-title">
+        <h1>Sony Kristanto</h1>
+        <div class="badge">
+          <i class="fas fa-map-pin" style="margin-right: 6px;"></i> Indonesia · pendidik
+        </div>
+      </div>
+    </div>
+
+    <!-- profesi dengan gaya menonjol -->
+    <div class="profesi-block">
+      <i class="fas fa-atom"></i>
+      <span>Physics Educator</span>
+      <span class="sub">· membangun rasa ingin tahu</span>
+    </div>
+
+    <!-- deskripsi singkat -->
+    <div class="bio">
+      <p>
+        <i class="fas fa-quote-left" style="opacity: 0.6;"></i> 
+        Membimbing generasi memahami alam semesta, satu eksperimen dan persamaan pada satu waktu.
+      </p>
+    </div>
+
+    <!-- minat / bidang (sentuhan fisika) -->
+    <div class="interest-grid">
+      <div class="interest-item"><i class="fas fa-rocket"></i> Astrofisika</div>
+      <div class="interest-item"><i class="fas fa-bolt"></i> Elektromagnetisme</div>
+      <div class="interest-item"><i class="fas fa-chart-line"></i> Mekanika Kuantum</div>
+      <div class="interest-item"><i class="fas fa-circle-nodes"></i> Fisika komputasi</div>
+      <div class="interest-item"><i class="fas fa-microscope"></i> Laboratorium</div>
+      <div class="interest-item"><i class="fas fa-chalkboard-user"></i> Pendidikan STEM</div>
+    </div>
+
+    <!-- kutipan / motto -->
+    <div class="quote">
+      <i class="fas fa-quote-right"></i> 
+      “Fisika bukan sekadar rumus, melainkan cara berpikir untuk melihat keindahan di balik fenomena.”
+    </div>
+
+    <!-- tautan kontak / sosial media -->
+    <div class="social-links">
+      <a href="#" class="btn-email"><i class="fas fa-envelope"></i> sony.kristanto@edu.id</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-twitter"></i> X</a>
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-globe"></i> Portofolio</a>
+    </div>
+
+    <!-- footer kecil -->
+    <div class="footer-note">
+      <span><i class="fas fa-graduation-cap"></i> Physics Educator · Sony Kristanto</span>
+      <span><i class="fas fa-feather-alt"></i> 2026 · membangun generasi saintis</span>
+    </div>
+  </div>
+</body>
+</html>
