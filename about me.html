@@ -81,7 +81,7 @@
     .card {
       position: relative;
       z-index: 1;
-      max-width: 920px;
+      max-width: 980px;
       width: 100%;
       background: rgba(10, 20, 30, 0.6);
       backdrop-filter: blur(24px) saturate(1.2);
@@ -253,15 +253,15 @@
       opacity: 0.7;
     }
 
-    /* grid minat — dengan ikon */
-    .interest-grid {
+    /* grid spesialisasi — Kinematika-Mekanika-Elektromagnetik-Suhu dan Kalor */
+    .spec-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 0.7rem;
       margin: 1.8rem 0 1.8rem 0;
     }
 
-    .interest-item {
+    .spec-item {
       background: rgba(255, 255, 255, 0.02);
       backdrop-filter: blur(4px);
       border-radius: 40px;
@@ -276,21 +276,21 @@
       transition: 0.2s ease;
     }
 
-    .interest-item i {
+    .spec-item i {
       color: #4db8ff;
       font-size: 1rem;
       width: 1.2rem;
       text-align: center;
     }
 
-    .interest-item:hover {
+    .spec-item:hover {
       background: rgba(0, 200, 255, 0.04);
       border-color: rgba(0, 200, 255, 0.12);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px -12px rgba(0, 150, 255, 0.1);
     }
 
-    /* quote futuristik */
+    /* quote futuristik — kutipan baru */
     .quote {
       margin: 1.6rem 0 2rem 0;
       padding: 1rem 1.8rem;
@@ -302,14 +302,21 @@
       font-style: italic;
       color: #c0dcec;
       font-weight: 300;
-      font-size: 1rem;
+      font-size: 1.05rem;
       backdrop-filter: blur(4px);
+      text-align: center;
     }
 
     .quote i {
       color: #4db8ff;
       margin-right: 0.6rem;
       opacity: 0.6;
+    }
+
+    .quote .highlight {
+      color: #7fd4ff;
+      font-weight: 600;
+      font-style: normal;
     }
 
     /* sosial media */
@@ -383,52 +390,58 @@
       color: #3a7a8f;
     }
 
-    /* === GAMBAR GEDUNG SEKOLAH (futuristik) === */
+    /* === GAMBAR GEDUNG SEKOLAH (dari foto yang diupload) === */
     .school-building {
       margin: 1.2rem 0 0.2rem 0;
       border-radius: 2rem;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(135deg, rgba(0, 40, 60, 0.4), rgba(10, 20, 40, 0.6));
+      background: linear-gradient(135deg, rgba(0, 40, 60, 0.3), rgba(10, 20, 40, 0.5));
       border: 1px solid rgba(0, 200, 255, 0.06);
       backdrop-filter: blur(4px);
-      min-height: 120px;
+      min-height: 130px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 0;
+      padding: 0.8rem 1.5rem;
     }
 
+    /* representasi visual gedung — elegan & futuristik */
     .building-visual {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
       flex-wrap: wrap;
-      padding: 0.8rem 1.5rem;
       width: 100%;
     }
 
     .building-icon {
-      font-size: 3.6rem;
-      color: rgba(77, 184, 255, 0.15);
+      font-size: 3.8rem;
+      color: rgba(77, 184, 255, 0.12);
       display: flex;
-      gap: 0.5rem;
+      gap: 0.8rem;
+      align-items: center;
     }
 
     .building-icon i {
-      filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.05));
+      filter: drop-shadow(0 0 30px rgba(0, 150, 255, 0.06));
+      transition: 0.3s;
+    }
+
+    .building-icon i:hover {
+      color: rgba(77, 184, 255, 0.25);
     }
 
     .building-info {
       text-align: left;
       flex: 1;
-      min-width: 160px;
+      min-width: 180px;
     }
 
     .building-info .name {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #d4ecff;
       letter-spacing: -0.01em;
     }
@@ -448,14 +461,14 @@
 
     .building-info .brand-tag {
       display: inline-block;
-      margin-top: 0.2rem;
-      font-size: 0.65rem;
+      margin-top: 0.3rem;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #4db8ff;
       background: rgba(0, 200, 255, 0.06);
-      padding: 0.1rem 0.8rem;
+      padding: 0.15rem 1rem;
       border-radius: 30px;
       border: 1px solid rgba(0, 200, 255, 0.06);
     }
@@ -465,6 +478,30 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.06), transparent);
       margin: 0.2rem 0;
+    }
+
+    /* badge SCHOOL OF FUTURE dari foto */
+    .school-badge-foto {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0, 200, 255, 0.04);
+      padding: 0.2rem 1rem 0.2rem 0.8rem;
+      border-radius: 40px;
+      border: 1px solid rgba(0, 200, 255, 0.06);
+      margin-top: 0.3rem;
+    }
+
+    .school-badge-foto i {
+      color: #4db8ff;
+      font-size: 0.7rem;
+    }
+
+    .school-badge-foto span {
+      color: #7fd4ff;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.5px;
     }
 
     /* responsive */
@@ -484,13 +521,13 @@
         font-size: 0.95rem;
         padding-left: 0.8rem;
       }
-      .interest-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      .spec-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
       }
       .building-visual {
         flex-direction: column;
         text-align: center;
-        padding: 0.8rem 0.5rem;
+        padding: 0.5rem 0;
       }
       .building-info {
         text-align: center;
@@ -498,6 +535,10 @@
       .social-links a {
         font-size: 0.8rem;
         padding: 0.3rem 0.9rem;
+      }
+      .quote {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
       }
     }
   </style>
@@ -530,7 +571,7 @@
       <span class="sub">· membangun generasi saintis</span>
     </div>
 
-    <!-- sekolah + branding School of Future -->
+    <!-- sekolah + branding School of Future (sesuai foto) -->
     <div class="school-block">
       <i class="fas fa-school"></i>
       <span class="school-name">SMA BPK PENABUR HOLIS Bandung</span>
@@ -545,25 +586,32 @@
       </p>
     </div>
 
-    <!-- === GAMBAR GEDUNG SEKOLAH (representasi futuristik) === -->
+    <!-- === GAMBAR GEDUNG SEKOLAH (representasi dari foto) === -->
     <div class="school-building">
       <div class="building-visual">
         <div class="building-icon">
           <i class="fas fa-building"></i>
-          <i class="fas fa-graduation-cap" style="opacity: 0.6;"></i>
+          <i class="fas fa-school" style="opacity: 0.7;"></i>
+          <i class="fas fa-graduation-cap" style="opacity: 0.5;"></i>
         </div>
         <div class="building-info">
           <div class="name">
             <i class="fas fa-location-dot"></i> SMA BPK PENABUR HOLIS
           </div>
           <div class="address">
-            Komplek Taman Holis Indah Blok A, Cigondewah Kidul, Bandung Kulon, Kota Bandung 40214 [citation:1][citation:4]
+            Komplek Taman Holis Indah Blok A, Cigondewah Kidul, Bandung Kulon, Kota Bandung 40214
           </div>
           <div class="brand-tag">
-            <i class="fas fa-arrow-right"></i> School of Future · Center of Excellence [citation:2]
+            <i class="fas fa-arrow-right"></i> School of Future · Center of Excellence
+          </div>
+          <!-- badge tambahan dari foto: SCHOOL OF FUTURE LIGHTS the Future -->
+          <div class="school-badge-foto">
+            <i class="fas fa-star"></i>
+            <span>SCHOOL OF FUTURE · LIGHTS the Future</span>
+            <i class="fas fa-star" style="opacity: 0.5;"></i>
           </div>
         </div>
-        <div style="display: flex; gap: 0.4rem; font-size: 1.2rem; color: rgba(77, 184, 255, 0.08);">
+        <div style="display: flex; gap: 0.4rem; font-size: 1.2rem; color: rgba(77, 184, 255, 0.06);">
           <i class="fas fa-circle"></i>
           <i class="fas fa-circle"></i>
           <i class="fas fa-circle"></i>
@@ -573,20 +621,18 @@
 
     <div class="building-line"></div>
 
-    <!-- minat / bidang -->
-    <div class="interest-grid">
-      <div class="interest-item"><i class="fas fa-rocket"></i> Astrofisika</div>
-      <div class="interest-item"><i class="fas fa-bolt"></i> Elektromagnetisme</div>
-      <div class="interest-item"><i class="fas fa-chart-line"></i> Mekanika Kuantum</div>
-      <div class="interest-item"><i class="fas fa-circle-nodes"></i> Fisika Komputasi</div>
-      <div class="interest-item"><i class="fas fa-microscope"></i> Laboratorium</div>
-      <div class="interest-item"><i class="fas fa-chalkboard-user"></i> Pendidikan STEM</div>
+    <!-- spesialisasi: Kinematika-Mekanika-Elektromagnetik-Suhu dan Kalor -->
+    <div class="spec-grid">
+      <div class="spec-item"><i class="fas fa-arrows-spin"></i> Kinematika</div>
+      <div class="spec-item"><i class="fas fa-gear"></i> Mekanika</div>
+      <div class="spec-item"><i class="fas fa-bolt"></i> Elektromagnetik</div>
+      <div class="spec-item"><i class="fas fa-temperature-high"></i> Suhu & Kalor</div>
     </div>
 
-    <!-- quote -->
+    <!-- quote baru: 'Jangan hanya mengejar NILAI, tetapi jadikanlah hidupmu BERNILAI' -->
     <div class="quote">
       <i class="fas fa-quote-right"></i> 
-      “Fisika bukan sekadar rumus, melainkan cara berpikir untuk melihat keindahan di balik fenomena.”
+      “Jangan hanya mengejar <span class="highlight">NILAI</span>, tetapi jadikanlah hidupmu <span class="highlight">BERNILAI</span>”
     </div>
 
     <!-- kontak -->
